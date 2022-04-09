@@ -179,6 +179,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				EA2843485E9E4531CECC2C4A /* [CP] Embed Pods Frameworks */,
+				A0F2AC1728024A3B00028D99 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -334,6 +335,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YADI_Tests/Pods-YADI_Tests-frameworks.sh\"\n";
+		};
+		A0F2AC1728024A3B00028D99 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftLint/swiftlint --config swiftlint.yml --path .\n";
 		};
 		EA2843485E9E4531CECC2C4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

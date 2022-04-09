@@ -1,16 +1,23 @@
 PODS:
+  - SwiftLint (0.43.1)
   - YADI (0.1.0)
 
 DEPENDENCIES:
+  - SwiftLint
   - YADI (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftLint
 
 EXTERNAL SOURCES:
   YADI:
     :path: "../"
 
 SPEC CHECKSUMS:
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   YADI: eaa357c8d97497e8c25f6d0d77b5f2653b1ef300
 
-PODFILE CHECKSUM: d0b1f401716a324f5974ae1ead8f52f35c0a5ba4
+PODFILE CHECKSUM: ab00de7383664fd2d97c133ecd432dec81ba4543
 
 COCOAPODS: 1.10.1
