@@ -1,0 +1,6 @@
+framework module YADI {
+  umbrella header "YADI-umbrella.h"
+
+  export *
+  module * { export * }
+}
