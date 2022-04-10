@@ -35,12 +35,16 @@ public struct MutableInject<T: AnyObject> {
 
     private var wrapped: T?
 
-    public init() { }
+    private let container: Container
+
+    public init(_ container: Container = .shared) {
+        self.container = container
+    }
 
     public var wrappedValue: T {
         mutating get {
             if self.wrapped == nil {
-                self.wrapped = Container.shared.resolve()
+                self.wrapped = self.container.resolve()
             }
 
             return self.wrapped!
