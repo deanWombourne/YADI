@@ -42,6 +42,11 @@ public class Container {
         self.generators[key] = Generator(label: "() -> \(key)", function: memoized(generator))
     }
 
+    public func addRepeating<T>(_ generator: @escaping () -> T) {
+        let key = String(describing: T.self)
+        self.generators[key] = Generator(label: "() -> \(key) - duplicating", function: generator)
+    }
+
     func reset() {
         self.generators = [:]
     }

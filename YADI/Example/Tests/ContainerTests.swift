@@ -2,15 +2,32 @@
 import XCTest
 
 // Some test types
-private final class NoDependencies {
+private final class NoDependencies: Equatable, Hashable {
     let value: String
     init(value: String) { self.value = value }
+
+    static func == (lhs: NoDependencies, rhs: NoDependencies) -> Bool {
+        return lhs.value == rhs.value
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.value)
+    }
 }
 
-private final class HasDependency {
+private final class HasDependency: Equatable, Hashable {
     let value: String
     @Inject var dependency: NoDependencies
     init(value: String) { self.value = value }
+
+    static func == (lhs: HasDependency, rhs: HasDependency) -> Bool {
+        return lhs.value == rhs.value && lhs.dependency.value == rhs.dependency.value
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.value)
+        hasher.combine(self.dependency.value)
+    }
 }
 
 final class ContainerTests: XCTestCase {
@@ -40,5 +57,31 @@ final class ContainerTests: XCTestCase {
         XCTAssertNotNil(generated)
         XCTAssertEqual(generated.value, "1")
         XCTAssertEqual(generated.dependency.value, "2")
+    }
+
+    func testShouldNotDuplicateInstances() {
+        var count = 0
+        Container.shared.add { () -> NoDependencies in
+            count += 1
+            return NoDependencies(value: UUID().uuidString)
+        }
+
+        let generated1: NoDependencies = Container.shared.resolve()
+        let generated2: NoDependencies = Container.shared.resolve()
+        XCTAssertEqual(count, 1)
+        XCTAssertEqual(generated1, generated2)
+    }
+
+    func testShouldDuplicateRepeatingInstances() {
+        var count = 0
+        Container.shared.addRepeating { () -> NoDependencies in
+            count += 1
+            return NoDependencies(value: UUID().uuidString)
+        }
+
+        let generated1: NoDependencies = Container.shared.resolve()
+        let generated2: NoDependencies = Container.shared.resolve()
+        XCTAssertEqual(count, 2)
+        XCTAssertNotEqual(generated1, generated2)
     }
 }
