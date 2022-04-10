@@ -13,8 +13,9 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9D6F694BA68D6B898C47D8D5 /* Pods_YADI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC56A6335F971B72E71605FB /* Pods_YADI_Example.framework */; };
-		A081F0AA280243EA00DD12D7 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A081F0AA280243EA00DD12D7 /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* ContainerTests.swift */; };
 		A081F0B02802443700DD12D7 /* Pods_YADI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A081F0AF2802443700DD12D7 /* Pods_YADI_Tests.framework */; };
+		A0F2AC1E2802E16B00028D99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F2AC1D2802E16B00028D99 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* ContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
 		8C329121EEBEC56B7E412BE4 /* Pods_YADI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YADI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		928C858CDE74A5B9F4BBCD75 /* Pods-YADI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YADI_Example.debug.xcconfig"; path = "Target Support Files/Pods-YADI_Example/Pods-YADI_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A081F0A1280243D800DD12D7 /* YADI_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YADI_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +48,8 @@
 		A081F0AD2802440800DD12D7 /* Pods_YADI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_YADI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A081F0AF2802443700DD12D7 /* Pods_YADI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_YADI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A081F0B12802449D00DD12D7 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F2AC1A2802DD2800028D99 /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
+		A0F2AC1D2802E16B00028D99 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A1A8F89915506C8D294D2570 /* Pods-YADI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YADI_Tests.release.xcconfig"; path = "Target Support Files/Pods-YADI_Tests/Pods-YADI_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BAB6CB879BECF3E77A51B2E4 /* Pods-YADI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YADI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YADI_Tests/Pods-YADI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF445E72785EA37653604517 /* YADI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YADI.podspec; path = ../YADI.podspec; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				A0F2AC192802DD1800028D99 /* Metadata */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for YADI */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -116,6 +120,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				A0F2AC1D2802E16B00028D99 /* ViewModel.swift */,
 			);
 			name = "Example for YADI";
 			path = YADI;
@@ -132,7 +137,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* ContainerTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -154,6 +159,14 @@
 				069EAE44520FE07218DEFAA3 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		A0F2AC192802DD1800028D99 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				A0F2AC1A2802DD2800028D99 /* swiftlint.yml */,
+			);
+			name = Metadata;
 			sourceTree = "<group>";
 		};
 		D894BBA672E5EC32ACABAD35 /* Pods */ = {
@@ -222,7 +235,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1330;
 					};
 					A081F0A0280243D800DD12D7 = {
 						CreatedOnToolsVersion = 13.3;
@@ -352,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftLint/swiftlint --config swiftlint.yml --path .\n";
+			shellScript = "$PODS_ROOT/SwiftLint/swiftlint --config swiftlint.yml --path ..\n";
 		};
 		EA2843485E9E4531CECC2C4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -379,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F2AC1E2802E16B00028D99 /* ViewModel.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -388,7 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A081F0AA280243EA00DD12D7 /* Tests.swift in Sources */,
+				A081F0AA280243EA00DD12D7 /* ContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

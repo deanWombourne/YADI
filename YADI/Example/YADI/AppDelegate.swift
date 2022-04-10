@@ -6,7 +6,10 @@
 //  Copyright (c) 2022 deanWombourne. All rights reserved.
 //
 
+import Foundation
 import UIKit
+
+import YADI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        Container.shared.add {
+            return ViewModel(value: "Hello")
+        }
+
+        print("Generators:")
+        print(Container.shared.listGenerators().joined(separator: "\n"))
+        print("-----------")
+
         return true
     }
 
